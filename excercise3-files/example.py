@@ -1,6 +1,6 @@
 from pprint import pprint 
 from DbConnector import DbConnector
-
+from bson.objectid import ObjectId
 
 class ExampleProgram:
 
@@ -67,9 +67,9 @@ def main():
         program.insert_documents(collection_name="Person")
         program.fetch_documents(collection_name="Person")
         program.drop_coll(collection_name="Person")
-        # program.drop_coll(collection_name='person')
-        # program.drop_coll(collection_name='users')
-        # Check that the table is dropped
+        program.drop_coll(collection_name='person')
+        program.drop_coll(collection_name='users')
+        #Check that the table is dropped
         program.show_coll()
     except Exception as e:
         print("ERROR: Failed to use database:", e)
